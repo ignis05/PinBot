@@ -21,8 +21,13 @@ async function endVoting(inter, targetMsg, results, unpin = false) {
 	let resp = ''
 	if (lead >= yesVotesLead) {
 		resp = `${unpin ? 'Unp' : 'P'}inning the message`
-		if (unpin) await targetMsg.unpin()
-		else await targetMsg.pin()
+		try {
+			if (unpin) await targetMsg.unpin()
+			else await targetMsg.pin()
+		} catch (err) {
+			console.log('failed to toggle pin')
+			console.log(err)
+		}
 	} else {
 		resp = `Not enough "yes" votes to ${unpin && 'un'}pin the message`
 	}
