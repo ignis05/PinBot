@@ -37,7 +37,7 @@ client.on('guildCreate', (guild) => {
 
 /** @param {Discord.CommandInteraction} inter */
 client.on('interactionCreate', (inter) => {
-	if (!inter.isCommand() && !inter.isContextMenu()) return
+	if (!inter.isContextMenu()) return
 	console.log(`Received interaction ${inter.commandName} from ${inter.user.tag}`)
 	if (!inter.guild) return inter.reply({ content: "Bot doesn't work in DMs", ephemeral: true })
 
