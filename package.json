@@ -5,7 +5,7 @@
 	"main": "bot.js",
 	"repository": "github.com/ignis05/PinBot",
 	"scripts": {
-		"start": "pm2 reload ecosystem.config.js",
+		"start": "pm2 start ecosystem.config.js",
 		"stop": "pm2 delete ecosystem.config.js",
 		"log": "pm2 log",
 		"monit": "pm2 monit",
