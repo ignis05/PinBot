@@ -1,0 +1,23 @@
+{
+	"name": "pin-bot",
+	"version": "1.0.0",
+	"description": "discord bot for pinning messages",
+	"main": "bot.js",
+	"repository": "github.com/ignis05/PinBot",
+	"scripts": {
+		"start": "pm2 reload ecosystem.config.js",
+		"stop": "pm2 delete ecosystem.config.js",
+		"log": "pm2 log",
+		"monit": "pm2 monit",
+		"register": "node scripts/register.js",
+		"get-invite": "node scripts/get-invite.js"
+	},
+	"author": "ignis05",
+	"license": "ISC",
+	"dependencies": {
+		"@discordjs/rest": "*",
+		"axios": "^0.21.2",
+		"discord-api-types": "^0.22.0",
+		"discord.js": "^13.1.0"
+	}
+}
